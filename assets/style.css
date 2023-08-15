@@ -1,0 +1,348 @@
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: red !important;
+    cursor: pointer;
+}
+
+
+:root {
+    --primary-color: rgb(11, 78, 179);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+/*Global styling  */
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* progress bar */
+
+.progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0 4rem;
+}
+
+.progressbar::before,
+.progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    counter-reset: step;
+    z-index: -1;
+}
+
+.progress {
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: 0.3s;
+}
+
+.progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+}
+
+.progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.progress-step-active {
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+}
+
+
+/* Form */
+
+.form {
+    width: clamp(600px, 100%, 1000px);
+    margin: 5 auto;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+}
+
+.form3 {
+    width: clamp(600px, 100%, 1000px);
+    margin: 20px;
+    padding: 0rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+
+.form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+}
+
+.form-step-active {
+    display: block;
+}
+
+
+@keyframes animate {
+    from {
+        transform: scale(1, 0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+.btn {
+    border-radius: 3px !important;
+    background-color: var(--primary-color) !important;
+    color: white;
+    border-color: var(--primary-color) !important;
+    width: 10%;
+}
+
+.btn:hover {
+    background-color: rgb(3, 51, 122);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+
+/* button */
+.btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.btn-next {
+    display: block;
+    text-decoration: none;
+    background-color: white !important;
+    color: white;
+    border-color: white !important;
+    cursor: pointer;
+    transition: 0.3s;
+    position: fixed;
+    right: 26%;
+    bottom: 10%;
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.btn-prev {
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+    cursor: pointer;
+    transition: 0.3s;
+    position: fixed;
+    left: 26%;
+    bottom: 10%;
+    width: 50px !important;
+    height: 50px !important;
+}
+
+
+.sambam-input {
+    border-width: 0.2rem;
+    border: solid #ccc;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: right;
+    border-radius: 5px;
+    margin-top: 0px;
+    justify-content: space-between;
+}
+
+span {
+    /* margin: 0.1rem; */
+    margin-top: 0.4rem;
+    margin-left: 0.4rem;
+}
+
+
+
+
+#fileNameSam {
+    align-items: center;
+    margin: 1px;
+    display: inline-flex;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background:#fff;
+}
+span{
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    height: 55px;
+    margin: 0 15px;
+    perspective: 1000px;
+}
+span a{
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+}
+span a:before,
+span a:after{
+    position: absolute;
+    content: "START";
+    height: 55px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid rgb(11, 78, 179);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+span a:before{
+    color: #fff;
+    background: rgb(11, 78, 179);
+    transform: rotateY(0deg) translateZ(25px);
+    content: "START"
+}
+span a:after{
+    color: rgb(11, 78, 179);
+    transform: rotateX(90deg) translateZ(25px);
+}
+span a:hover{
+    transform: translateZ(-25px) rotateX(-90deg);
+}
+
+ion-icon {
+    font-size: 20px;
+}
+
+/* Style the tab */
+.tab {
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 300px;
+    overflow: auto;
+}
+
+  /* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+  /* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+  /* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+  /* Style the tab content */
+.tabcontent {
+
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+}

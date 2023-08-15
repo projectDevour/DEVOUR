@@ -1,0 +1,33 @@
+{
+  "name": "DEVOUR",
+  "version": "1.0.0",
+  "description": "starprojectv3",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devourProject/Devour.git"
+  },
+  "author": "artniverse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devourProject/Devour/issues"
+  },
+  "homepage": "https://github.com/devourProject/Devour/blob/main/README.md",
+  "devDependencies": {
+    "electron": "^17.1.2"
+  },
+  "dependencies": {
+    "@yaireo/ui-range": "^2.1.15",
+    "bootstrap": "^5.1.3",
+    "electron-installer-debian": "^3.1.0",
+    "install": "^0.13.0",
+    "python-shell": "^3.0.1",
+    "sweetalert2": "^11.4.14",
+    "websql": "^2.0.3",
+    "xlsx": "^0.18.5"
+  }
+}

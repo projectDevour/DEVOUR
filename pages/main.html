@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>DEVOUR</title>
+</head>
+<style>
+datalist {
+    display:flex;
+    color: black;
+    
+}
+.values{
+    margin-left:46px;
+}
+</style>
+
+
+<body>
+    <div id="startPage" style="margin-top: 0px; ">
+        <div class="profile">
+            <img style="width: 400px; height: 400px; display: flex !important; margin-left: 300px; margin-bottom: 20px; " src="../assets/img/logo.png" alt="profile_picture">
+            
+        </div>
+        <h1 style=" margin-bottom: 100px;">DELETERIOUS VARIANTS ON UNCOVERED REGIONS</h1>
+        <span style="display: flex; justify-content: center; margin-left: 320px;"><a href="#" id ="startBtn"></a></span>
+        
+
+</div>
+        
+
+        <div class="form3" id="appPage" style="display: none;">
+            <form action="#" class="form">
+                <img style="width: 120px; height: 120px; display: flex !important; margin: auto; margin-bottom: 20px; " src="../assets/img/logo.png" alt="profile_picture">
+                <!-- progres bar -->
+                <div class="progressbar">
+                    <div class="progress" id="progress"></div>
+                    <div class="progress-step progress-step-active" data-title="Aligment Files" id="pathProgress2" ></div>
+                    <div class="progress-step" data-title="Select Annotation Sources And Calculate Overlap"></div>
+                    <div class="progress-step" data-title="Download Overlap Results"></div>
+                </div>
+        
+        <!-- steps -->
+            <!-- Sayfa 1 -->
+            <div class="form-step form-step-active first-page">
+        
+                <label for="sambam">Alignment File (SAM or BAM Format)</label>
+                <div class="input-group sambam-input">
+                    <h6 id="fileNameSam"></h6>
+                    <div style="display: inline-block">
+                        <button class="btn" style="width: 120px" type="button" id="samSelectBtn" >Select File</button>
+                    </div>
+                </div>
+        
+                <label style="margin-top:5px" for="sambam">Exome Capture File (BED Format)</label>
+                <div class="input-group sambam-input">
+                    <h6 style="margin-top: 9px;" id="fileNameCapture"></h6>
+                    <div style="display: inline-block">
+                        <button class="btn" style="width: 120px" type="button" id="captureSelectBtn">Select File</button>
+                    </div>
+                </div>
+        
+                <label style="margin-top:12px;" for="threshold">Maximum Read Depth</label>
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="15" value="5" class="slider" id="myRange" step="1" list="tickmarks" style="margin-bottom: 0px; padding: 0px;"/>
+                    <datalist style="margin-bottom: 20px;" id="tickmarks">
+                        <option value="0" label="0">0</option>
+                        <option value="1" style="margin-left: 48px;">1</option>
+                        <option class="values" value="2" >2</option>
+                        <option class="values" value="3" >3</option>
+                        <option class="values" value="4" style="margin-left: 46px;">4</option>
+                        <option class="values" value="5" style="margin-left: 47px;">5</option>
+                        <option class="values" value="6" style="margin-left: 46px;">6</option>
+                        <option class="values" value="7" style="margin-left: 46px;">7</option>
+                        <option class="values" value="8" style="margin-left: 45px;">8</option>
+                        <option class="values" value="9" style="margin-left: 46px;">9</option>
+                        <option  value="10" style="margin-left:42px">10</option>
+                        <option value="11" style="margin-left:38px" >11</option>
+                        <option  value="12" style="margin-left:38px">12</option>
+                        <option  value="13" style="margin-left:38px">13</option>
+                        <option  value="14" style="margin-left:37px">14</option>
+                        <option value="15" label="15" style="margin-left:37px"></option>
+                    </datalist>
+                </div>
+        
+                <div>
+                    <labelstyle="margin-top: 20px;">Human Reference Genome Release Name</label>
+                    <div class="d-flex radio-btn" style="margin-bottom:30px;" >
+                        <input class="form-check-input" type="radio" name="humanGenome" id="hg19" value="hg19" checked>
+                        <label class="form-check-label" for="hg19" style="padding-left:10px; margin-top: 6px;">
+                        Hg19
+                        </label>
+                
+                        <input class="form-check-input" type="radio" name="humanGenome" id="hg38" value="hg38" style="margin-left: 15px;">
+                        <label class="form-check-label" for="hg38" style="padding-left:10px; margin-top: 6px;">
+                        Hg38
+                        </label>
+                    </div>
+                </div>
+        
+                <div class="d-flex justify-content-right" style="display: flex; justify-content: right;">
+                    <div id="spinLoadingSamtoBam" style="display: none; background-color: rgb(11, 78, 179); border-radius: 4px; margin-right: 3px; padding-top: 9px; padding-left: 20px;">
+                        <i class="fa fa-spinner fa-spin"  style="display: block; font-size: 20px; margin-right: 20px; color: white;"></i>
+                    </div>
+                        
+                    
+                    <button class="btn" style="width: 150px !important;" type="button" id="processBtn">Submit</button>
+                </div>
+        
+            </div>
+        
+            <!-- sayfa 2 -->
+            <div class="form-step result-page" >
+                <h4 style="font-weight: bolder;">Annotation Sources<span id="humanGenomeSpan" style="width: 500px;"></span></h4>
+                <div>
+                    <table>
+                        <tr>
+                            <th style="padding-left: 70px; border: none;">
+                                Name
+                            </th>
+                            <th style="padding-left: 496px; border: none;">
+                                Source
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+                <table id="annotationSources">
+                    <!-- burası mainwindowdan doluyor -->
+                </table>
+        
+                <div class="d-flex justify-content-right" style="margin-top: 50px; display: flex; justify-content: right;">
+                    <div id="spinLoadingOverlap" style="display:none; background-color: rgb(11, 78, 179); border-radius: 4px; margin-right: 3px; padding-top: 9px; padding-left: 20px;">
+                        <i class="fa fa-spinner fa-spin"  style="display: block; font-size: 20px; margin-right: 20px; color: white;"></i>
+                    </div> 
+                    <button class="btn" style="width: 150px !important;" type="button" id="overlapBtn">Submit</button>
+                </div>
+        
+            </div>
+        
+            <!-- sayfa 3 -->
+            <div class="form-step final-page">
+                <div class="form4" id="form4" style="margin-top: 80px;">
+                    <h4 style="font-weight: bolder;">Overlap Results For Annotation Sources</h4>
+                    <div style="display: flex; justify-content: right;">
+                        <button class="btn" style="width: 200px !important; display: block;" type="button" id="exportSelectedBtn"><i class="fa fa-spinner fa-spin" id="exportSelectedSpin" style="display: none;"></i> Export Selected Tabs</button>
+                        <button class="btn" style="width: 150px !important; margin-left: 10px;" type="button" id="exportAllBtn"><i class="fa fa-spinner fa-spin" id="exportAllSpin" style="display: none;"></i> Export All Tabs</button>
+                    </div>
+                    
+                    <div class="form" style="margin-bottom: 20px; margin-top: 10px;">
+                        <div>
+                            <h6 id="previewMessage" style="font-style: italic; font-size: 12px; display: none; color: rgb(11, 78, 179);">Showing first 10 lines for <span id ="fileNamePreview" style=" color: rgb(11, 78, 179); margin:0px; height: 0px;"></span></h6>
+                        </div>
+                        <div style="display: flex;">
+                            <div class="tab" id="tab-name">
+                                
+                        </div>
+                        <div id="tab-remove">
+                            <div id="London" class="tabcontent" style="overflow: auto; width: 660px;">
+                                <table class="table" >
+                                    <thead>
+                                        <tr>
+                                            <th class="scope" style="font-size: 13px;">Chr</th>
+                                            <th class="scope" style="font-size: 13px;">Start</th>
+                                            <th class="scope" style="font-size: 13px;">End</th>
+                                            <th class="scope" style="font-size: 13px;">Depth</th>
+                                            <th class="scope" style="font-size: 13px;">Annotation Start</th>
+                                            <th class="scope" style="font-size: 13px;">Annotation End</th>
+                                            <th class="scope" style="font-size: 13px;">Annotation Info</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table-body">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div id="Paris" class="tabcontent" style="overflow: auto; width: 660px; display: none;">
+                                <h3 id="overlapEmpty" style="margin-top: 110px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                align-content: center;">Couldn't Find Any Overlap For: <span id="fileNameForEmptyOverlap" style="margin-bottom:34px; height: 0px; margin-left: 6px;"></span></h3>
+                            </div>
+    
+                        </div>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                    <div style="display: flex; justify-content: right;">
+                        <button class="btn" style="width: 100px !important; display: block;" type="button" id="restartBtn">Restart</button>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                
+            </div>
+            </form>
+        </div>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="bootstrap.bundle.min.js / bootstrap.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+    crossorigin="anonymous"></script>
+<script src="../src/mainWindow.js"></script>
+<!-- <script src="../assets/progressStyle.js"></script> -->
+
+
+</body>
+</html>

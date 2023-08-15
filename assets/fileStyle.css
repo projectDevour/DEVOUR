@@ -1,0 +1,55 @@
+:root {
+    --primary-color: rgb(11, 78, 179);
+}
+
+.input-group{
+    width: 75% !important;
+    margin: auto;
+}
+
+.sambam-input {
+    border-width: 0.3px !important;
+    border: solid #CED4DA;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: right;
+    border-radius: 5px;
+    margin-top: 0px;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.select-btn {
+    border-radius: 3px !important;
+    background-color: var(--primary-color) !important;
+    color: white;
+    border-color: var(--primary-color) !important;
+    width: 40px !important;
+    height: 25px;
+    padding: 0px !important;
+    padding-top: 2px !important;
+    margin-right: 3px !important;
+    margin-top: 3px;
+}
+
+.select-btn:hover {
+    background-color: rgb(3, 51, 122);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
