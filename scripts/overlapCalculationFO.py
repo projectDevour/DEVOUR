@@ -57,10 +57,10 @@ def reportOverlaps(depthgzFile, annotgzFile, annotDict, chrom, outDir):
                 begin = int(cols[1])
                 end = int(cols[2])
                 depth = int(cols[3])
-                overlaps = sorted(annotTree[begin:end+1])
+                overlaps = sorted(annotTree[begin:end])
                 if (overlaps):
                     for overlap in overlaps:
-                        out.write(chrom + "\t" + str(begin) + "\t" + str(end) + "\t" + str(depth) + "\t" + str(overlap[0]) + "\t" + str(overlap[1] - 1) + "\t" + overlap[2] + "\n")
+                        out.write(chrom + "\t" + str(begin) + "\t" + str(end - 1) + "\t" + str(depth) + "\t" + str(overlap[0]) + "\t" + str(overlap[1] - 1) + "\t" + overlap[2] + "\n")
         out.close()
 
 
