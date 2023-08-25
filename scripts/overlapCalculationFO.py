@@ -48,7 +48,7 @@ def reportOverlaps(depthgzFile, annotgzFile, annotDict, chrom, outDir):
     annotTree = IntervalTree(annotDict.get(chrom))
     if (annotTree):
         out = open(outDir + depthFileName + "_" + dbType + "_" + chrom + "_overlaps.tsv", 'w')
-        cmd2 = ["tabix", depthgzFile, '-T', annotgzFile, chrom]
+        cmd2 = ["tabix", depthgzFile, chrom]
         result = subprocess.run(cmd2, capture_output=True, check=False, text=True, encoding='utf-8').stdout
         for line in result.split(os.linesep):
             if line != '':
