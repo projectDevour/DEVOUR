@@ -3,6 +3,7 @@
 <p align="center">
   <img width="300" height="300" src="assets/img/logo.png">
 </p>
+
 ## 1-What is DEVOUR?
 
 DEVOUR is a desktop application that identifies low-coverage regions obtained from whole-genome/exome sequencing techniques, annotates the missed variants on the uncovered regions using genetic variant annotation databases and reports those clinically important variants.
