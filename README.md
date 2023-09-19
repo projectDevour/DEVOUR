@@ -4,6 +4,7 @@
   <img width="300" height="300" src="assets/img/logo.png">
 </p>
 ## 1-What is DEVOUR?
+
 DEVOUR is a desktop application that identifies low-coverage regions obtained from whole-genome/exome sequencing techniques, annotates the missed variants on the uncovered regions using genetic variant annotation databases and reports those clinically important variants.
 
  * **DEVOUR is developed using [ElectronJS](https://www.electronjs.org/) framework**
@@ -85,7 +86,7 @@ cd annovar
 
 Currently, DEVOUR is only working on Linux environments. You can access the **debian file** required for the installation by clicking the download link below.<br/>
 <br/>
-[![Download - DEVOUR](https://img.shields.io/static/v1?label=Download&message=DEVOUR&color=2ea44f&style=for-the-badge)](https://github.com/devourProject/Devour/releases/download/DEVOUR/devour_1.0.0_amd64.deb)
+[![Download - DEVOUR](https://img.shields.io/static/v1?label=Download&message=DEVOUR&color=2ea44f&style=for-the-badge)](https://github.com/projectDevour/DEVOUR/releases/download/v1.0.0/devour_1.0.0_amd64.deb)
 
 #### Recommended installation method (Ubuntu Software Center):
 
