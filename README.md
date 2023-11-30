@@ -18,7 +18,6 @@ Before installing DEVOUR the following tools needs to be installed seperately.<b
 * Python3 
 * Required Python libraries (intervaltree, pandas, openpxyl)
 * Samtools
-* Mosdepth
 * ANNOVAR
 
 ### 2.1 - Python3
@@ -71,10 +70,7 @@ make
 ./samtools
 ```
 
-### 2.4 Mosdepth
-
-> Mosdepth is a command-line tool for calculating sequence coverages. The installation of Mosdepth is explained in detail on its [github page](https://github.com/brentp/mosdepth#installation).
-### 2.5 ANNOVAR
+### 2.4 ANNOVAR
 
 > ANNOVAR is a well-known tool for functionally annotating genetic variations discovered in various genomes using up-to-date information. It is a necessary tool for DEVOUR to download and use the disease-specific variant databases.(Cosmic, Clinvar, Icgc, NCI60)
 > ANNOVAR requires user registration in order to start downloading process. After filling the following registration [form](https://www.openbioinformatics.org/annovar/annovar_download_form.php), the download will start.
