@@ -6,8 +6,8 @@ const path = require("path");
 //elements
 let workingDirPath = document.getElementById("workingDirPath");
 let fileNameWorkingDir = document.getElementById("fileNameWorkingDir");
-let mosdepthPath = document.getElementById("mosdepthPath");
-let fileNameMosdepth = document.getElementById("fileNameMosdepth");
+// let mosdepthPath = document.getElementById("mosdepthPath");
+// let fileNameMosdepth = document.getElementById("fileNameMosdepth");
 let samtoolsPath = document.getElementById("samtoolsPath");
 let fileNameSamtools = document.getElementById("fileNameSamtools");
 let annovarPath = document.getElementById("annovarPath");
@@ -23,11 +23,11 @@ let annovarAnnotFileRemove = document.getElementById("annovarAnnotFileRemove");
 workingDirPath.addEventListener("click", ()=>{
     ipcRenderer.send("workingDirPath","workingDirPath");
 });
-
+/*
 mosdepthPath.addEventListener("click",()=>{
     ipcRenderer.send("mosdepthPath","mosdepthPath");
 });
-
+*/
 samtoolsPath.addEventListener("click",()=>{
     ipcRenderer.send("samtoolsPath","samtoolsPath");
 });
@@ -63,11 +63,11 @@ annovarAnnotFileRemove.addEventListener("click",removeFunction);
 ipcRenderer.on("workingDirPathName",(err,data)=>{
     fileNameWorkingDir.innerHTML = data;
 });
-
+/*
 ipcRenderer.on("mosdepthPathName",(err,data)=>{
     fileNameMosdepth.innerHTML = data;
 });
-
+*/
 ipcRenderer.on("samtoolsPathName",(err,data)=>{
     fileNameSamtools.innerHTML = data;
 });
@@ -82,8 +82,8 @@ ipcRenderer.on("loadConfig",(err,data)=>{
     data.forEach(element => {
         if(element.id == "workingDirPath"){
             fileNameWorkingDir.innerHTML = element.path;
-        }else if(element.id == "mosdepthPath"){
-            fileNameMosdepth.innerHTML = element.path;
+        /* }else if(element.id == "mosdepthPath"){
+            fileNameMosdepth.innerHTML = element.path; */
         }else if(element.id == "samtoolsPath"){
             fileNameSamtools.innerHTML = element.path;
         }else if(element.id == "annovarPath"){
