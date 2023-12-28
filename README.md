@@ -83,7 +83,7 @@ cd annovar
 
 Currently, DEVOUR is only working on Linux environments. You can access the **debian file** required for the installation by clicking the download link below.<br/>
 <br/>
-[![Download - DEVOUR](https://img.shields.io/static/v1?label=Download&message=DEVOUR&color=2ea44f&style=for-the-badge)](https://github.com/projectDevour/DEVOUR/releases/download/v1.0.0/devour_1.0.0_amd64.deb)
+[![Download - DEVOUR](https://img.shields.io/static/v1?label=Download&message=DEVOUR&color=2ea44f&style=for-the-badge)](https://github.com/projectDevour/DEVOUR/releases/download/v2.0.0/devour_2.0.0_amd64.deb)
 
 #### Recommended installation method (Ubuntu Software Center):
 
